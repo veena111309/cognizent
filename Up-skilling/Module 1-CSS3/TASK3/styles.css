@@ -1,0 +1,19 @@
+/* ID Selector */
+#parent-container {
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+/* Descendant Selector */
+#parent-container p {
+    color: #555;
+}
+/* Multiple Class Selector */
+.btn.btn-action {
+    background-color: #28a745;
+    color: white;
+}
+/* Attribute Selector */
+button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}

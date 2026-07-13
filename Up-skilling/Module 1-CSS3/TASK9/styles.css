@@ -1,0 +1,7 @@
+.multi-col {
+    column-count: 3;
+    column-gap: 30px;
+    column-rule: 1px solid #ccc;
+    text-align: justify;
+    line-height: 1.6;
+}

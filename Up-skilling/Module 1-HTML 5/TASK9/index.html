@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Municipal Service Finder</title>
+    <style>
+        .geo-card {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 400px;
+            border-radius: 8px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Find Nearest Ward Office</h1>
+    <p>Click below to authorize geolocation and find the nearest civic services office.</p>
+    
+    <div class="geo-card">
+        <button onclick="getUserLocation()">Acquire Geolocation</button>
+        <p id="geoDisplay">Status: Awaiting action.</p>
+    </div>
+
+    <script>
+        function getUserLocation() {
+            const display = document.getElementById('geoDisplay');
+            if (!navigator.geolocation) {
+                display.innerText = "Geolocation is not supported by this browser.";
+                return;
+            }
+
+            display.innerText = "Locating position...";
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    const lat = position.coords.latitude;
+                    const lon = position.coords.longitude;
+                    display.innerHTML = `<strong>Coordinates Found!</strong><br/>Latitude: ${lat.toFixed(4)}<br/>Longitude: ${lon.toFixed(4)}`;
+                },
+                (error) => {
+                    display.innerText = "Unable to retrieve location: " + error.message;
+                }
+            );
+        }
+    </script>
+</body>
+</html>

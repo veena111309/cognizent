@@ -1,0 +1,8 @@
+/* Linear Gradients and HSL custom values */
+.gradient-banner {
+    background: linear-gradient(135deg, hsl(210, 80%, 20%), hsl(210, 80%, 40%));
+    color: #ffffff;
+    padding: 60px;
+    text-align: center;
+    border-radius: 12px;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Program Sign-up</title>
+</head>
+<body>
+    <h1>Event Registration Form</h1>
+    <form action="#" method="POST">
+        <div>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" required placeholder="Jane Doe" />
+        </div>
+        <br/>
+        <div>
+            <label for="emailAddress">Email Address:</label>
+            <input type="email" id="emailAddress" name="emailAddress" required placeholder="jane@example.com" />
+        </div>
+        <br/>
+        <div>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" min="18" max="120" required />
+        </div>
+        <br/>
+        <div>
+            <label for="eventCategory">Event Track:</label>
+            <select id="eventCategory" name="eventCategory">
+                <option value="planning">Urban Planning</option>
+                <option value="environment">Environmental Drive</option>
+                <option value="charity">Charity Fundraiser</option>
+            </select>
+        </div>
+        <br/>
+        <div>
+            <label>Meal Preference:</label>
+            <input type="radio" id="veg" name="diet" value="vegetarian" checked />
+            <label for="veg">Vegetarian</label>
+            <input type="radio" id="nonveg" name="diet" value="non-vegetarian" />
+            <label for="nonveg">Non-Vegetarian</label>
+        </div>
+        <br/>
+        <div>
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms">I agree to abide by the civic volunteer conduct guidelines.</label>
+        </div>
+        <br/>
+        <button type="submit">Submit Registration</button>
+    </form>
+</body>
+</html>

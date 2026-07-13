@@ -1,0 +1,64 @@
+<div class="container">
+  <h2>Corporate Employee Roster</h2>
+
+  <div *ngIf="errorMessage" class="error-alert">
+    {{ errorMessage }}
+  </div>
+
+  <table class="employee-table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Status</th>
+        <th>Skills</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of employees">
+        <td>{{ emp.id }}</td>
+        <td>{{ emp.name }}</td>
+        <td>{{ emp.department?.name }}</td>
+        <td>{{ emp.salary | currency }}</td>
+        <td>{{ emp.permanent ? 'Permanent' : 'Contract' }}</td>
+        <td>
+          <span *ngFor="let s of emp.skills" class="skill-badge">{{ s.name }}</span>
+        </td>
+        <td>
+          <button (click)="editEmployee(emp)" class="btn btn-edit">Modify</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Inline Edit Form -->
+  <div *ngIf="selectedEmployee" class="edit-form-card">
+    <h3>Modify Details for ID: {{ selectedEmployee.id }}</h3>
+    <form (ngSubmit)="saveEmployee()">
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" [(ngModel)]="selectedEmployee.name" required />
+      </div>
+
+      <div class="form-group">
+        <label for="salary">Monthly Salary:</label>
+        <input type="number" id="salary" name="salary" [(ngModel)]="selectedEmployee.salary" required />
+      </div>
+
+      <div class="form-group">
+        <label>
+          <input type="checkbox" name="permanent" [(ngModel)]="selectedEmployee.permanent" />
+          Permanent Employee
+        </label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn btn-save">Save Changes</button>
+        <button type="button" (click)="cancelEdit()" class="btn btn-cancel">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>

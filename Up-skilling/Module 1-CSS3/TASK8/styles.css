@@ -1,0 +1,10 @@
+* {
+    box-sizing: border-box; /* Includes padding & border in total width/height */
+}
+.box-container {
+    width: 300px;
+    padding: 20px;
+    margin: 30px auto;
+    border: 5px solid #343a40;
+    background-color: #f1f3f5;
+}

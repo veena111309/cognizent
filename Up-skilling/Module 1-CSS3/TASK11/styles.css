@@ -1,0 +1,10 @@
+.broken-overflow {
+    width: 200px;
+    border: 2px red solid;
+    /* Intentionally clipping or overflowing to demonstrate browser devtools toggles */
+    overflow: hidden;
+}
+.inner-box {
+    width: 400px;
+    background-color: orange;
+}

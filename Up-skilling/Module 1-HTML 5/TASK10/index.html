@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevTools Debugging Lab</title>
+</head>
+<body>
+    <h1>Chrome DevTools Debugging</h1>
+    <p>Open your browser console (F12) to inspect the script error trigger.</p>
+    <button onclick="calculateTaxes()">Compute City Tax Allocation</button>
+    <p id="taxResult"></p>
+
+    <script>
+        function calculateTaxes() {
+            try {
+                // Intended bug: Calling an undefined utility method to show console tracking
+                let taxAmount = computeRate(50000); 
+                document.getElementById('taxResult').innerText = "Taxes due: $" + taxAmount;
+            } catch (err) {
+                console.error("Debugging Triggered Error:", err);
+                document.getElementById('taxResult').innerHTML = "<span style='color:red;'>Error details logged in browser console.</span>";
+            }
+        }
+    </script>
+</body>
+</html>

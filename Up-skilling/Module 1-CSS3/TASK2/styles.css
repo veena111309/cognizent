@@ -1,0 +1,12 @@
+/* 
+   CSS Syntax Demonstration
+   Selector: .card
+   Properties: background-color, border, padding, border-radius
+*/
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}

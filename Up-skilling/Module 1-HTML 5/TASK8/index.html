@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Preferences</title>
+    <style>
+        body.dark-mode {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        body.light-mode {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+        .container {
+            padding: 30px;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <div class="container">
+        <h1>User Preferences Dashboard</h1>
+        <p>Select your dashboard display theme. Your choice is persisted locally.</p>
+        <button onclick="setTheme('dark-mode')">Dark Mode</button>
+        <button onclick="setTheme('light-mode')">Light Mode</button>
+    </div>
+
+    <script>
+        // Check for persisted theme
+        const savedTheme = localStorage.getItem('user-portal-theme') || 'light-mode';
+        document.body.className = savedTheme;
+
+        function setTheme(theme) {
+            document.body.className = theme;
+            localStorage.setItem('user-portal-theme', theme);
+        }
+    </script>
+</body>
+</html>

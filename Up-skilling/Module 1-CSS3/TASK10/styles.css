@@ -1,0 +1,23 @@
+/* Mobile First Default */
+.responsive-box {
+    padding: 20px;
+    background-color: lightcoral;
+    text-align: center;
+}
+
+/* Tablet screens */
+@media (min-width: 600px) {
+    .responsive-box {
+        background-color: lightblue;
+    }
+}
+
+/* Desktop screens */
+@media (min-width: 900px) {
+    .responsive-box {
+        background-color: lightgreen;
+        max-width: 800px;
+        margin: 50px auto;
+        border-radius: 8px;
+    }
+}
